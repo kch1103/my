@@ -7,11 +7,17 @@ train_data = np.load("regression.npy")
 test_data = np.load("regression_test.npy")
 
 #train & test data
-X_train = np.c_[train_data[:,0]]
-y_train = np.c_[train_data[:,1]]
+X_train = np.array(train_data[:,0])
+y_train = np.array(train_data[:,1])
 
-x_test = np.c_[test_data[:,0]]
-y_test = np.c_[test_data[:,1]]
+X_train = np.expand_dims(X_train, axis = -1)
+y_train = np.expand_dims(y_train, axis = -1)
+
+x_test = np.array(test_data[:,0])
+y_test = np.array(test_data[:,1])
+
+x_test = np.expand_dims(x_test, axis = -1)
+y_test = np.expand_dims(y_test, axis = -1)
 
 #model
 model = LinearRegression()
