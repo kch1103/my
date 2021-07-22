@@ -49,6 +49,7 @@ print(accuracy_score)
 x_test = x_test.reshape(len(y_test), 28, 28)
 
 for i in range(10):
+    
     plt.imshow(x_test[i], cmap = plt.cm.get_cmap("binary"))
     print("Predict: ", y_pred[i])
     plt.imshow()
