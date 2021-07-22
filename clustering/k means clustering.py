@@ -102,7 +102,7 @@ class kmeans:
     distances = [euclidean_distance(centroids_old[i], centroids[i]) for i in range(self.k)]
     return sum(distances) == 0
 
-k = kmeans(10, 100, False)
+k = kmeans(10, 100)
 k.predict(x_train)
 k.predict(x_test)
 
